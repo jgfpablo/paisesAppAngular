@@ -1,0 +1,13 @@
+.p-sidebar-left {
+  width: 15rem;
+}
+
+.ng-tns-c4029148367-0 {
+  text-align: center;
+}
+
+.p-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

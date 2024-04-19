@@ -1,0 +1,13 @@
+mat-list-item:hover {
+  background: rgb(159, 159, 159);
+}
+
+.w-li {
+  width: 17rem;
+  border: 1px solid gray;
+  border-radius: 2%;
+}
+
+mat-list-item {
+  border-bottom: 1px solid gray;
+}

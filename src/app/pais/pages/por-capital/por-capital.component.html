@@ -1,0 +1,10 @@
+<h2>Por Capital</h2>
+<hr />
+<app-pais-input
+  (respuesta)="recibir($event)"
+  [tipo]="busqueda"
+></app-pais-input>
+
+<hr />
+
+<app-tabla [pais]="respuesta" [termino]="termino" [error]="error"></app-tabla>

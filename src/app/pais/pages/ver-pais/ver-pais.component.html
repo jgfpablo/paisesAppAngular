@@ -1,0 +1,33 @@
+<h2>Ver Pais</h2>
+<hr />
+
+@if (respuesta ) {
+
+<div class="card rounded d-flex flex-row align-items-center p-3 card">
+  <div class="w-50">
+    <h1>Información</h1>
+    <span>
+      <p>Nombre: {{ respuesta.name.common }}</p>
+    </span>
+    <span>
+      <p>Capital: {{ respuesta.capital }}</p>
+    </span>
+    <span>
+      <p>Poblacion: {{ respuesta.population }}</p>
+    </span>
+    <span>
+      <p>Codigo: {{ respuesta.cca2 }}</p>
+    </span>
+  </div>
+
+  <div class="w-50 center">
+    <!-- <img src="{{ respuesta.flags.svg }}" width="100%" alt="" srcset="" /> -->
+  </div>
+</div>
+
+} @else { @if (error == false) {
+<div>espere porfavor ...</div>
+} @else if (error == true) {
+
+<div>error al cargar datos</div>
+} }

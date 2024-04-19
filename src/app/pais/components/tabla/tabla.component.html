@@ -1,0 +1,53 @@
+@if (error == true) {
+<div class="alert alert-danger">
+  No se encontro nada con el termino {{ termino }}
+</div>
+} @else {
+
+<table class="min-w-full">
+  <thead class="bg-gray-900 border-b">
+    <tr>
+      <th class="text-sm font-medium text-gray-100 px-6 py-4 text-left">#</th>
+      <th class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
+        Bandera
+      </th>
+      <th class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
+        Nombre
+      </th>
+      <th class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
+        Poblacion
+      </th>
+      <th class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
+        Mas informacion
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    @if(pais.length > 0){
+    <tr
+      class="bg-gray-900 border-b transition duration-300 ease-in-out hover:bg-gray-700"
+      *ngFor="let item of pais; let i = index"
+    >
+      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-100">
+        {{ i + 1 }}
+      </td>
+      <td class="text-sm text-gray-100 font-light px-6 py-4 whitespace-nowrap">
+        <img src="{{ item.flags.svg }}" width="100px" alt="" srcset="" />
+      </td>
+
+      <td class="text-sm text-gray-100 font-light px-6 py-4 whitespace-nowrap">
+        <span>{{ item.capital }} - {{ item.name.common }}</span>
+      </td>
+
+      <td class="text-sm text-gray-100 font-light px-6 py-4 whitespace-nowrap">
+        {{ item.population | number }}
+      </td>
+      <td class="text-sm text-gray-100 font-light px-6 py-4 whitespace-nowrap">
+        <a [routerLink]="['/pais/', item.cca2]">Ver...</a>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+
+}
