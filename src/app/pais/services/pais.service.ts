@@ -32,10 +32,4 @@ export class PaisService {
       params: this.httpParams,
     });
   }
-
-  // verPaisPorNombre(id: string): Observable<Paises> {
-  //   return this.httpClient.get<Paises>(`${this.apiUrl}/alpha/${id}`, {
-  //     params: this.httpParams,
-  //   });
-  // }
 }

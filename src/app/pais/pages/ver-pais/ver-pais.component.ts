@@ -28,6 +28,10 @@ export class VerPaisComponent {
 
     if (this.tipo == 'capital') {
       this.map = switchMap(({ id }) => this.paisService.buscarCapital(id));
+      this.tipo = '';
+    } else if (this.tipo == 'pais') {
+      this.map = switchMap(({ id }) => this.paisService.buscarPais(id));
+      this.tipo = '';
     } else {
       this.map = switchMap(({ id }) => this.paisService.buscarPais(id));
     }

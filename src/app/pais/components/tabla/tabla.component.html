@@ -43,7 +43,7 @@
         {{ item.population | number }}
       </td>
       <td class="text-sm text-gray-100 font-light px-6 py-4 whitespace-nowrap">
-        <a [routerLink]="['/pais/', item.cca2]">Ver...</a>
+        <a [routerLink]="['/pais/', item.name.common]">Ver...</a>
       </td>
     </tr>
     }
