@@ -15,6 +15,7 @@ export class PorCapitalComponent {
   busqueda: string = 'capital';
 
   recibir(res: Paises[]) {
+    this.respuesta = []; //-------
     this.respuesta.push(...res);
   }
 }

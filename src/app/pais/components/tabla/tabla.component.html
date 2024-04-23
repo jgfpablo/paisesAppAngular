@@ -4,15 +4,17 @@
 </div>
 } @else {
 
-<table class="min-w-full">
+<table class="min-w-full h-4/5">
   <thead class="bg-gray-900 border-b">
     <tr>
-      <th class="text-sm font-medium text-gray-100 px-6 py-4 text-left">#</th>
       <th class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
         Bandera
       </th>
       <th class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
-        Nombre
+        Pais
+      </th>
+      <th class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
+        Capital
       </th>
       <th class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
         Poblacion
@@ -26,17 +28,25 @@
     @if(pais.length > 0){
     <tr
       class="bg-gray-900 border-b transition duration-300 ease-in-out hover:bg-gray-700"
-      *ngFor="let item of pais; let i = index"
+      *ngFor="let item of pais.slice(count, count2); let i = index"
     >
-      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-100">
-        {{ i + 1 }}
-      </td>
       <td class="text-sm text-gray-100 font-light px-6 py-4 whitespace-nowrap">
-        <img src="{{ item.flags.svg }}" width="100px" alt="" srcset="" />
+        <div class="w-24 h-16">
+          <img
+            class="object-cover"
+            src="{{ item.flags.svg }}"
+            alt=""
+            srcset=""
+          />
+        </div>
       </td>
 
       <td class="text-sm text-gray-100 font-light px-6 py-4 whitespace-nowrap">
-        <span>{{ item.capital }} - {{ item.name.common }}</span>
+        <span>{{ item.name.common }}</span>
+      </td>
+
+      <td class="text-sm text-gray-100 font-light px-6 py-4 whitespace-nowrap">
+        <span>{{ item.capital }} </span>
       </td>
 
       <td class="text-sm text-gray-100 font-light px-6 py-4 whitespace-nowrap">
@@ -49,5 +59,18 @@
     }
   </tbody>
 </table>
+<div class="w-full">
+  <mat-paginator
+    class="demo-paginator w-full"
+    (page)="handlePageEvent($event)"
+    [length]="pais.length"
+    [pageSize]="5"
+    aria-label="Select page"
+    [showFirstLastButtons]="true"
+    hidePageSize="true"
+    [pageIndex]="0"
+  >
+  </mat-paginator>
+</div>
 
 }

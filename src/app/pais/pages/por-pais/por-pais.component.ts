@@ -14,6 +14,7 @@ export class PorPaisComponent {
   termino: string = '';
   busqueda: string = 'pais';
   recibir(res: Paises[]) {
+    this.respuesta = [];
     this.respuesta.push(...res);
   }
 }

@@ -86,6 +86,7 @@ export class PaisInputComponent implements OnInit {
           },
           (error) => {
             console.log(`Error ${this.tipo} no encontrada`);
+            console.log(error);
           }
         );
     }
@@ -96,14 +97,12 @@ export class PaisInputComponent implements OnInit {
     if (this.tipo == 'pais') {
       this.paisService.buscarPais(this.termino).subscribe((res) => {
         this.respuesta.emit(res);
-        console.log(this.respuesta);
       });
       this.termino = '';
       this.mostrarSugerencias = false;
     } else {
       this.paisService.buscarCapital(this.termino).subscribe((res) => {
         this.respuesta.emit(res);
-        console.log(this.respuesta);
       });
       this.termino = '';
       this.mostrarSugerencias = false;

@@ -11,6 +11,7 @@ import { PaisInputComponent } from './components/pais-input/pais-input.component
 
 import { TablaComponent } from './components/tabla/tabla.component';
 import { RouterLink } from '@angular/router';
+import { MaterialAngularModule } from '../material-angular/material-angular.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,13 @@ import { RouterLink } from '@angular/router';
     PaisInputComponent,
     TablaComponent,
   ],
-  imports: [CommonModule, FormsModule, HttpClientModule, RouterLink],
+  imports: [
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    RouterLink,
+    MaterialAngularModule,
+  ],
   exports: [
     PorCapitalComponent,
     PorPaisComponent,
